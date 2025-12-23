@@ -406,6 +406,7 @@ h3 {
     flex: 1;
     padding-right: 40px;
     z-index: 100;
+        background: var(--color-100);
 }
 
 .pag-info h3 {
@@ -608,7 +609,7 @@ h3 {
 
     .cnt-historias .buttons,
     .btn-3 {
-        width: 100% !important;
+        width: 100% ;
         display: flex;
         justify-content: center;
         padding: 16px;
@@ -677,43 +678,47 @@ h3 {
         box-sizing: border-box;
     }
 
-    .pag-card {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-        background: var(--color-neutral-100);
-        border-radius: 16px;
-        border: 1px solid var(--color-neutral-300);
-        overflow: hidden;
+.pag-card {
+    flex-direction: column;
+    height: auto;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+    .pag-grid{
         width: 100%;
-        margin: 0;
+max-width: 100%;
+box-sizing: border-box;
     }
 
     .pag-card.reverse-layout {
         flex-direction: column-reverse;
+ 
     }
 
-    .pag-img {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: 24px 20px 10px 20px;
-        background-color: transparent;
-    }
+.pag-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
-    .pag-img img {
-        max-width: 718px;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
+.pag-img img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
 
-    .pag-info {
-        padding: 0 24px 24px 24px;
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-    }
+.pag-info {
+    width: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+}
 
     .pag-info h3 {
         font-size: 24px;
@@ -739,7 +744,7 @@ h3 {
         align-self: stretch;
     }
 
-    .footer-container .logo {
+     .footer-container .logo {
         display: flex;
         justify-content: center;
         width: 100%;
@@ -750,25 +755,27 @@ h3 {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 20px;
-        grid-row-gap: 40px;
+        grid-row-gap: 20px;
         padding: 0 10px;
         width: 100%;
         max-width: 100%;
     }
 
     .footer-col {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        flex: 1 1 calc(50% - 10px);
+        max-width: calc(50% - 10px);
     }
-
+    
     .footer-col h4 {
         font-size: 16px;
         margin-bottom: 12px;
+        white-space: nowrap; 
     }
 
     .footer-list li {
         margin-bottom: 8px;
+        white-space: nowrap; 
+        margin: 0; 
     }
 
     .footer-container .brand-logo {
@@ -785,9 +792,17 @@ h3 {
         height: auto;
     }
 
+
     .footer-columns {
-        grid-template-columns: 1fr 1fr;
-        width: 100%;
+        flex-wrap: wrap;
+        gap: 40px 20px;
+    }
+
+
+
+    
+    .brand-logo {
+        justify-content: center;
     }
 }
 
@@ -795,11 +810,15 @@ h3 {
 
 
 @media screen and (max-width: 360px) {
+
+
+
+
+
     main {
         width: 100%;           
         max-width: 100%;       
-        padding: 0 16px;       
-        box-sizing: border-box;
+
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -809,7 +828,7 @@ h3 {
         width: 100%;
         max-width: 100%;
         padding: 0 16px;
-        box-sizing: border-box;
+/
     }
 
     .cnt-card {
@@ -823,7 +842,7 @@ h3 {
         max-width: 100%;  
         min-width: 0;     
         padding: 16px;   
-        box-sizing: border-box;
+
     }
 
     h1,
@@ -834,7 +853,7 @@ h3 {
         padding: 0;
         text-align: center;
         max-width: 100%;
-        box-sizing: border-box;
+
         word-wrap: break-word;
         overflow-wrap: break-word;
     }
@@ -843,4 +862,14 @@ h3 {
     .separador-2 {
         width: 100%;
     }
+
+        .footer-columns {
+            grid-column-gap: 10px; 
+        }
+        
+        .footer-col a {
+            font-size: 13px; 
+        }
+
+
 }
